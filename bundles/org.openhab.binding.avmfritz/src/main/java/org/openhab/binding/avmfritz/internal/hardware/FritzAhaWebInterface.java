@@ -54,6 +54,7 @@ import org.slf4j.LoggerFactory;
  *         DECT
  * @author Christoph Weitkamp - Added support for groups
  * @author Ulrich Mertin - Added support for HAN-FUN blinds
+ * @author Christoph Sommer - Added support for color temperature
  */
 @NonNullByDefault
 public class FritzAhaWebInterface {
