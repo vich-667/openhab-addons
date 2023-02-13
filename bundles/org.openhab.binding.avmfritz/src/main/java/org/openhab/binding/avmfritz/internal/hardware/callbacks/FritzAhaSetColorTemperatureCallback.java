@@ -20,27 +20,30 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Callback implementation for applying templates.
+ * Callback implementation for updating colortemperature. Supports reauthorization
  *
- * @author Christoph Weitkamp - Initial contribution
+ * @author Christoph Sommer - Initial contribution
  */
 @NonNullByDefault
-public class FritzAhaApplyTemplateCallback extends FritzAhaReauthCallback {
+public class FritzAhaSetColorTemperatureCallback extends FritzAhaReauthCallback {
 
-    private final Logger logger = LoggerFactory.getLogger(FritzAhaApplyTemplateCallback.class);
-
-    private static final String WEBSERVICE_COMMAND = "switchcmd=applytemplate";
+    private final Logger logger = LoggerFactory.getLogger(FritzAhaSetColorTemperatureCallback.class);
 
     private final String ain;
 
     /**
      * Constructor
      *
-     * @param webInterface web interface to FRITZ!Box
-     * @param ain AIN of the template that should be applied
+     * @param webIface Interface to FRITZ!Box
+     * @param ain AIN of the device that should be switched
+     * @param temperature Color Temperature in Kelvin (typ.: 2700 to 6500)
+     * @param duration Duration of the change in 100ms. 0 immediately.
      */
-    public FritzAhaApplyTemplateCallback(FritzAhaWebInterface webInterface, String ain) {
-        super(WEBSERVICE_PATH, WEBSERVICE_COMMAND + "&ain=" + ain, webInterface, GET, 1);
+    public FritzAhaSetColorTemperatureCallback(FritzAhaWebInterface webIface, String ain, int temperature,
+            int duration) {
+        super(WEBSERVICE_PATH,
+                "switchcmd=setcolortemperature&temperature=" + temperature + "&duration=" + duration + "&ain=" + ain,
+                webIface, GET, 1);
         this.ain = ain;
     }
 
@@ -48,7 +51,7 @@ public class FritzAhaApplyTemplateCallback extends FritzAhaReauthCallback {
     public void execute(int status, String response) {
         super.execute(status, response);
         if (isValidRequest()) {
-            logger.trace("Received response '{}' for item '{}'", response, ain);
+            logger.debug("Received response '{}' for item '{}'", response, ain);
         }
     }
 }
