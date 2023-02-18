@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2023 Contributors to the openHAB project
+ * Copyright (c) 2010-2022 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -12,7 +12,18 @@
  */
 package org.openhab.binding.avmfritz.internal.handler;
 
-import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.*;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.BINDING_ID;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_APPLY_TEMPLATE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_BATTERY;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_DEVICE_LOCKED;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_ENERGY;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_LOCKED;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_MODE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_OUTLET;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_POWER;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_VOLTAGE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.INVALID_PATTERN;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.POWERLINE546E_STANDALONE_THING_TYPE;
 
 import java.math.BigDecimal;
 import java.util.List;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2023 Contributors to the openHAB project
+ * Copyright (c) 2010-2022 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -12,7 +12,21 @@
  */
 package org.openhab.binding.avmfritz.internal.handler;
 
-import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.*;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_BATTERY;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_BATTERY_LOW;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_GROUP_BOTTOM_LEFT;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_GROUP_BOTTOM_RIGHT;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_GROUP_DEVICE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_GROUP_SENSORS;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_GROUP_TOP_LEFT;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_GROUP_TOP_RIGHT;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_HUMIDITY;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_LAST_CHANGE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_PRESS;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CHANNEL_TEMPERATURE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CONFIG_CHANNEL_TEMP_OFFSET;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.DECT400_THING_TYPE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.DECT440_THING_TYPE;
 
 import java.math.BigDecimal;
 import java.time.Instant;

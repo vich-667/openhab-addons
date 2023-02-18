@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2023 Contributors to the openHAB project
+ * Copyright (c) 2010-2022 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -12,7 +12,14 @@
  */
 package org.openhab.binding.avmfritz.internal.discovery;
 
-import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.*;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.BOX_MODEL_NAME;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.BRIDGE_FRITZBOX;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.BRIDGE_THING_TYPE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.CONFIG_IP_ADDRESS;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.INVALID_PATTERN;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.POWERLINE546E_MODEL_NAME;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.POWERLINE546E_STANDALONE_THING_TYPE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.SUPPORTED_BRIDGE_THING_TYPES_UIDS;
 import static org.openhab.core.thing.Thing.PROPERTY_VENDOR;
 
 import java.util.Dictionary;

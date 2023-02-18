@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2023 Contributors to the openHAB project
+ * Copyright (c) 2010-2022 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -12,7 +12,16 @@
  */
 package org.openhab.binding.avmfritz.internal.dto;
 
-import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.*;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_AUTO;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_BOOST;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_COMFORT;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_ECO;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_MANUAL;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_OFF;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_ON;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_UNKNOWN;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_VACATION;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.MODE_WINDOW_OPEN;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

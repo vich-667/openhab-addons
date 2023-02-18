@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2023 Contributors to the openHAB project
+ * Copyright (c) 2010-2022 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -12,7 +12,15 @@
  */
 package org.openhab.binding.avmfritz.internal;
 
-import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.*;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.BRIDGE_THING_TYPE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.GROUP_HEATING_THING_TYPE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.POWERLINE546E_STANDALONE_THING_TYPE;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.SUPPORTED_BUTTON_THING_TYPES_UIDS;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.SUPPORTED_DEVICE_THING_TYPES_UIDS;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.SUPPORTED_GROUP_THING_TYPES_UIDS;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.SUPPORTED_HEATING_THING_TYPES;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.SUPPORTED_LIGHTING_THING_TYPES;
+import static org.openhab.binding.avmfritz.internal.AVMFritzBindingConstants.SUPPORTED_THING_TYPES_UIDS;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
