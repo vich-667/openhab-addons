@@ -12,7 +12,72 @@
  */
 package org.openhab.binding.senechome.internal;
 
-import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.*;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_BATTERY_CURRENT;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_BATTERY_FUEL_CHARGE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_BATTERY_POWER;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_BATTERY_TEMPERATURE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_BATTERY_VOLTAGE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CASE_TEMPERATURE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CHARGED_ENERGY_PACK1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CHARGED_ENERGY_PACK2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CHARGED_ENERGY_PACK3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CHARGED_ENERGY_PACK4;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CURRENT_MPP1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CURRENT_MPP2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CURRENT_MPP3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CURRENT_PACK1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CURRENT_PACK2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CURRENT_PACK3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CURRENT_PACK4;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CYCLES_PACK1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CYCLES_PACK2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CYCLES_PACK3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_CYCLES_PACK4;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_DISCHARGED_ENERGY_PACK1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_DISCHARGED_ENERGY_PACK2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_DISCHARGED_ENERGY_PACK3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_DISCHARGED_ENERGY_PACK4;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_ENERGY_PRODUCTION;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_CURRENT_PH1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_CURRENT_PH2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_CURRENT_PH3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_FREQUENCY;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_POWER_PH1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_POWER_PH2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_POWER_PH3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_VOLTAGE_PH1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_VOLTAGE_PH2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_GRID_VOLTAGE_PH3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MAX_CELL_VOLTAGE_PACK1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MAX_CELL_VOLTAGE_PACK2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MAX_CELL_VOLTAGE_PACK3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MAX_CELL_VOLTAGE_PACK4;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MCU_TEMPERATURE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MIN_CELL_VOLTAGE_PACK1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MIN_CELL_VOLTAGE_PACK2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MIN_CELL_VOLTAGE_PACK3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_MIN_CELL_VOLTAGE_PACK4;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_POWER_CONSUMPTION;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_POWER_LIMITATION;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_POWER_LIMITATION_STATE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_POWER_MPP1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_POWER_MPP2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_POWER_MPP3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_SYSTEM_STATE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_SYSTEM_STATE_VALUE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_VOLTAGE_MPP1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_VOLTAGE_MPP2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_VOLTAGE_MPP3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_VOLTAGE_PACK1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_VOLTAGE_PACK2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_VOLTAGE_PACK3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_VOLTAGE_PACK4;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_WALLBOX1_CHARGING_CURRENT_PH1;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_WALLBOX1_CHARGING_CURRENT_PH2;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_WALLBOX1_CHARGING_CURRENT_PH3;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_WALLBOX1_CHARGING_POWER;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_WALLBOX1_STATE;
+import static org.openhab.binding.senechome.internal.SenecHomeBindingConstants.CHANNEL_SENEC_WALLBOX1_STATE_VALUE;
 import static org.openhab.core.types.RefreshType.REFRESH;
 
 import java.io.IOException;
@@ -124,7 +189,9 @@ public class SenecHomeHandler extends BaseThingHandler {
     @Override
     public void initialize() {
         config = getConfigAs(SenecHomeConfigurationDTO.class);
-        senecHomeApi.setHostname("%s://%s".formatted(config.useHttp ? "http" : "https", config.hostname));
+        String url = String.format("%s://%s", config.useHttp ? "http" : "https", config.hostname);
+        logger.trace("Set url from config: {}", url);
+        senecHomeApi.setHostname(url);
         refreshJob = scheduler.scheduleWithFixedDelay(this::refresh, 0, config.refreshInterval, TimeUnit.SECONDS);
         limitationStatus = null;
     }
